@@ -44,7 +44,6 @@ export default {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=-1")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         state.listOfPokemon = data.results.map((el, index) => ({
           ...el,
           slugNumber: index + 1,
