@@ -45,12 +45,11 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        state.listOfPokemon = data.results;
-        state.urlIdLookup = data.results.reduce(
-          (acc, cur, index) => (acc = { ...acc, [cur.name]: index + 1 })
-        );
+        state.listOfPokemon = data.results.map((el, index) => ({
+          ...el,
+          slugNumber: index + 1,
+        }));
       });
-
     return { ...toRefs(state), updateSearchTerm };
   },
 };

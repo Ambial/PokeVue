@@ -1,6 +1,6 @@
 <template>
   <div class="ml-4 text-2xl text-blue-500">
-    <router-link :to="`/about/`">
+    <router-link :to="`/about/${pokemon.slugNumber}`">
       {{ pokemon.name }}
     </router-link>
   </div>
